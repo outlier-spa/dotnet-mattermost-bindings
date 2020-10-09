@@ -1,2 +1,3 @@
 # dotnet-mattermost-bindings
-C# - mattermost bindings nuget
+
+API Client and models to simplify mattermost/dotnet apps integrations, with mattermost websocket event endpoint support.
