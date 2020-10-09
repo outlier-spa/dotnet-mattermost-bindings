@@ -15,9 +15,13 @@ jobs:
       with:
         dotnet-version: 3.1.108
     - name: Install dependencies
-      run: dotnet restore
+      run: |
+        cd src/
+        dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: |
+        cd src/
+        dotnet build --configuration Release --no-restore
     - name: Publish FluentEmail.Core
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
