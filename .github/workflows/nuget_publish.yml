@@ -1,0 +1,29 @@
+name: Publish Packages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.108
+    - name: Install dependencies
+      run: |
+        cd src/
+        dotnet restore
+    - name: Build
+      run: |
+        cd src/
+        dotnet build --configuration Release --no-restore
+    - name: Publish Outlier.Mattermost
+      uses: brandedoutcast/publish-nuget@v2.5.5
+      with:
+          PROJECT_FILE_PATH: src/Outlier.Mattermost/Outlier.Mattermost.csproj
+          NUGET_KEY: ${{secrets.OUTLIER_NUGET_API_KEY}}
