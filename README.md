@@ -1,5 +1,7 @@
-# dotnet-mattermost-bindings - Outlier.Mattermost nuget package.
+![dotnet-mattermost-bindings logo](src/Outlier.Mattermost/mattermost-binding.png)
 
-API Client and models to simplify mattermost/dotnet apps integrations, with mattermost websocket event endpoint support.
+# dotnet-mattermost-bindings
+
+.NET Standard 2.1 API Client to simplify mattermost/dotnet apps integrations, with mattermost websocket event endpoint support.
 
 https://www.nuget.org/packages/Outlier.Mattermost/
